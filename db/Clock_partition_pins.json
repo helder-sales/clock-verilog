@@ -1,0 +1,89 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "segSel[0]",
+					"strict" : false
+				},
+				{
+					"name" : "segSel[1]",
+					"strict" : false
+				},
+				{
+					"name" : "segSel[2]",
+					"strict" : false
+				},
+				{
+					"name" : "segSel[3]",
+					"strict" : false
+				},
+				{
+					"name" : "segSel[4]",
+					"strict" : false
+				},
+				{
+					"name" : "segSel[5]",
+					"strict" : false
+				},
+				{
+					"name" : "segSel[6]",
+					"strict" : false
+				},
+				{
+					"name" : "segSel[7]",
+					"strict" : false
+				},
+				{
+					"name" : "digSel[0]",
+					"strict" : false
+				},
+				{
+					"name" : "digSel[1]",
+					"strict" : false
+				},
+				{
+					"name" : "digSel[2]",
+					"strict" : false
+				},
+				{
+					"name" : "digSel[3]",
+					"strict" : false
+				},
+				{
+					"name" : "digSel[4]",
+					"strict" : false
+				},
+				{
+					"name" : "digSel[5]",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "minBtn",
+					"strict" : false
+				},
+				{
+					"name" : "hourBtn",
+					"strict" : false
+				},
+				{
+					"name" : "secBtn",
+					"strict" : false
+				},
+				{
+					"name" : "enBtn",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

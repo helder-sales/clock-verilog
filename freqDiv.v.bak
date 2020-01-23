@@ -1,0 +1,22 @@
+module freqDiv(input clk, output reg clkOut);
+
+//Registrador para guardar a contagem dos pulsos de clock
+reg [25:0]count;
+
+always @(posedge clk)
+	begin
+		
+		count <= count + 1'b1;
+		
+		//Se a contagem for metade de 50M, inverte a saída do clock auxiliar
+		if(count == 25'd24999999)
+			begin
+			
+				clkOut = !clkOut;
+				count <= 1'b0;
+				
+			end
+	
+	end
+	
+endmodule 

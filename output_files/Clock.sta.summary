@@ -1,0 +1,233 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -4.564
+TNS   : -126.677
+
+Type  : Slow 1200mV 85C Model Setup 'counter_4_3_Bits:sec_counter|auxClk'
+Slack : -2.916
+TNS   : -8.946
+
+Type  : Slow 1200mV 85C Model Setup 'freqDiv:div_50M|clkOut'
+Slack : -2.843
+TNS   : -9.037
+
+Type  : Slow 1200mV 85C Model Setup 'counter_4_3_Bits:min_counter|auxClk'
+Slack : -1.265
+TNS   : -5.605
+
+Type  : Slow 1200mV 85C Model Setup 'freqDiv:div_50M|clkOutDisp'
+Slack : -0.505
+TNS   : -1.287
+
+Type  : Slow 1200mV 85C Model Setup 'debouncer:enBtn_Dbc|out'
+Slack : -0.411
+TNS   : -0.411
+
+Type  : Slow 1200mV 85C Model Hold 'counter_4_3_Bits:min_counter|auxClk'
+Slack : 0.453
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'counter_4_3_Bits:sec_counter|auxClk'
+Slack : 0.453
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'freqDiv:div_50M|clkOutDisp'
+Slack : 0.453
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'freqDiv:div_50M|clkOut'
+Slack : 0.454
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.742
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'debouncer:enBtn_Dbc|out'
+Slack : 0.922
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -89.246
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'counter_4_3_Bits:sec_counter|auxClk'
+Slack : -1.487
+TNS   : -11.896
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'freqDiv:div_50M|clkOut'
+Slack : -1.487
+TNS   : -11.896
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'counter_4_3_Bits:min_counter|auxClk'
+Slack : -1.487
+TNS   : -8.922
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'freqDiv:div_50M|clkOutDbc'
+Slack : -1.487
+TNS   : -5.948
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'freqDiv:div_50M|clkOutDisp'
+Slack : -1.487
+TNS   : -4.461
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer:enBtn_Dbc|out'
+Slack : -1.487
+TNS   : -1.487
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -4.305
+TNS   : -112.878
+
+Type  : Slow 1200mV 0C Model Setup 'counter_4_3_Bits:sec_counter|auxClk'
+Slack : -2.683
+TNS   : -7.740
+
+Type  : Slow 1200mV 0C Model Setup 'freqDiv:div_50M|clkOut'
+Slack : -2.657
+TNS   : -7.932
+
+Type  : Slow 1200mV 0C Model Setup 'counter_4_3_Bits:min_counter|auxClk'
+Slack : -1.044
+TNS   : -4.592
+
+Type  : Slow 1200mV 0C Model Setup 'freqDiv:div_50M|clkOutDisp'
+Slack : -0.345
+TNS   : -0.875
+
+Type  : Slow 1200mV 0C Model Setup 'debouncer:enBtn_Dbc|out'
+Slack : -0.297
+TNS   : -0.297
+
+Type  : Slow 1200mV 0C Model Hold 'counter_4_3_Bits:min_counter|auxClk'
+Slack : 0.402
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'counter_4_3_Bits:sec_counter|auxClk'
+Slack : 0.402
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'freqDiv:div_50M|clkOut'
+Slack : 0.402
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'freqDiv:div_50M|clkOutDisp'
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.691
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'debouncer:enBtn_Dbc|out'
+Slack : 0.841
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -89.246
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'counter_4_3_Bits:sec_counter|auxClk'
+Slack : -1.487
+TNS   : -12.391
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'freqDiv:div_50M|clkOut'
+Slack : -1.487
+TNS   : -11.896
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'counter_4_3_Bits:min_counter|auxClk'
+Slack : -1.487
+TNS   : -9.198
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'freqDiv:div_50M|clkOutDbc'
+Slack : -1.487
+TNS   : -5.948
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'freqDiv:div_50M|clkOutDisp'
+Slack : -1.487
+TNS   : -4.461
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer:enBtn_Dbc|out'
+Slack : -1.487
+TNS   : -1.487
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -1.510
+TNS   : -24.131
+
+Type  : Fast 1200mV 0C Model Setup 'counter_4_3_Bits:sec_counter|auxClk'
+Slack : -0.966
+TNS   : -1.089
+
+Type  : Fast 1200mV 0C Model Setup 'freqDiv:div_50M|clkOut'
+Slack : -0.704
+TNS   : -0.869
+
+Type  : Fast 1200mV 0C Model Setup 'counter_4_3_Bits:min_counter|auxClk'
+Slack : 0.013
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'freqDiv:div_50M|clkOutDisp'
+Slack : 0.335
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'debouncer:enBtn_Dbc|out'
+Slack : 0.426
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'counter_4_3_Bits:min_counter|auxClk'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'counter_4_3_Bits:sec_counter|auxClk'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'freqDiv:div_50M|clkOutDisp'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'freqDiv:div_50M|clkOut'
+Slack : 0.188
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.273
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'debouncer:enBtn_Dbc|out'
+Slack : 0.392
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -64.754
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'counter_4_3_Bits:sec_counter|auxClk'
+Slack : -1.000
+TNS   : -8.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'freqDiv:div_50M|clkOut'
+Slack : -1.000
+TNS   : -8.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'counter_4_3_Bits:min_counter|auxClk'
+Slack : -1.000
+TNS   : -6.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'freqDiv:div_50M|clkOutDbc'
+Slack : -1.000
+TNS   : -4.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'freqDiv:div_50M|clkOutDisp'
+Slack : -1.000
+TNS   : -3.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer:enBtn_Dbc|out'
+Slack : -1.000
+TNS   : -1.000
+
+------------------------------------------------------------

@@ -1,0 +1,4 @@
+Warning (10268): Verilog HDL information at freqDiv.v(14): always construct contains both blocking and non-blocking assignments File: C:/Users/helde/Documents/Intel/Quartus_workspace/Clock_Verilog/freqDiv.v Line: 14
+Warning (10268): Verilog HDL information at freqDiv.v(37): always construct contains both blocking and non-blocking assignments File: C:/Users/helde/Documents/Intel/Quartus_workspace/Clock_Verilog/freqDiv.v Line: 37
+Warning (10268): Verilog HDL information at freqDiv.v(56): always construct contains both blocking and non-blocking assignments File: C:/Users/helde/Documents/Intel/Quartus_workspace/Clock_Verilog/freqDiv.v Line: 56
+Warning (10268): Verilog HDL information at debouncer.v(8): always construct contains both blocking and non-blocking assignments File: C:/Users/helde/Documents/Intel/Quartus_workspace/Clock_Verilog/debouncer.v Line: 8

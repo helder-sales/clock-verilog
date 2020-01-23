@@ -1,0 +1,283 @@
+|Clock
+clk => clk.IN1
+rst => rst.IN4
+enBtn => enBtn.IN1
+secBtn => secBtn.IN1
+minBtn => minBtn.IN1
+hourBtn => hourBtn.IN1
+segSel[0] << decoder:clock_dec.dataOut
+segSel[1] << decoder:clock_dec.dataOut
+segSel[2] << decoder:clock_dec.dataOut
+segSel[3] << decoder:clock_dec.dataOut
+segSel[4] << decoder:clock_dec.dataOut
+segSel[5] << decoder:clock_dec.dataOut
+segSel[6] << decoder:clock_dec.dataOut
+segSel[7] << decoder:clock_dec.dataOut
+digSel[0] << decoder:clock_dec.bits
+digSel[1] << decoder:clock_dec.bits
+digSel[2] << decoder:clock_dec.bits
+digSel[3] << decoder:clock_dec.bits
+digSel[4] << decoder:clock_dec.bits
+digSel[5] << decoder:clock_dec.bits
+digSel[6] << decoder:clock_dec.bits
+digSel[7] << decoder:clock_dec.bits
+
+
+|Clock|freqDiv:div_50M
+clkIn => countAux2[0].CLK
+clkIn => countAux2[1].CLK
+clkIn => countAux2[2].CLK
+clkIn => countAux2[3].CLK
+clkIn => countAux2[4].CLK
+clkIn => countAux2[5].CLK
+clkIn => countAux2[6].CLK
+clkIn => countAux2[7].CLK
+clkIn => countAux2[8].CLK
+clkIn => countAux2[9].CLK
+clkIn => countAux2[10].CLK
+clkIn => countAux2[11].CLK
+clkIn => countAux2[12].CLK
+clkIn => countAux2[13].CLK
+clkIn => countAux2[14].CLK
+clkIn => countAux2[15].CLK
+clkIn => countAux2[16].CLK
+clkIn => countAux2[17].CLK
+clkIn => clkOutDbc~reg0.CLK
+clkIn => countAux1[0].CLK
+clkIn => countAux1[1].CLK
+clkIn => countAux1[2].CLK
+clkIn => countAux1[3].CLK
+clkIn => countAux1[4].CLK
+clkIn => countAux1[5].CLK
+clkIn => countAux1[6].CLK
+clkIn => countAux1[7].CLK
+clkIn => countAux1[8].CLK
+clkIn => countAux1[9].CLK
+clkIn => countAux1[10].CLK
+clkIn => countAux1[11].CLK
+clkIn => clkOutDisp~reg0.CLK
+clkIn => count[0].CLK
+clkIn => count[1].CLK
+clkIn => count[2].CLK
+clkIn => count[3].CLK
+clkIn => count[4].CLK
+clkIn => count[5].CLK
+clkIn => count[6].CLK
+clkIn => count[7].CLK
+clkIn => count[8].CLK
+clkIn => count[9].CLK
+clkIn => count[10].CLK
+clkIn => count[11].CLK
+clkIn => count[12].CLK
+clkIn => count[13].CLK
+clkIn => count[14].CLK
+clkIn => count[15].CLK
+clkIn => count[16].CLK
+clkIn => count[17].CLK
+clkIn => count[18].CLK
+clkIn => count[19].CLK
+clkIn => count[20].CLK
+clkIn => count[21].CLK
+clkIn => count[22].CLK
+clkIn => count[23].CLK
+clkIn => count[24].CLK
+clkIn => clkOut~reg0.CLK
+rst => count[0].ACLR
+rst => count[1].ACLR
+rst => count[2].ACLR
+rst => count[3].ACLR
+rst => count[4].ACLR
+rst => count[5].ACLR
+rst => count[6].ACLR
+rst => count[7].ACLR
+rst => count[8].ACLR
+rst => count[9].ACLR
+rst => count[10].ACLR
+rst => count[11].ACLR
+rst => count[12].ACLR
+rst => count[13].ACLR
+rst => count[14].ACLR
+rst => count[15].ACLR
+rst => count[16].ACLR
+rst => count[17].ACLR
+rst => count[18].ACLR
+rst => count[19].ACLR
+rst => count[20].ACLR
+rst => count[21].ACLR
+rst => count[22].ACLR
+rst => count[23].ACLR
+rst => count[24].ACLR
+rst => clkOut~reg0.ENA
+en => clkOut.OUTPUTSELECT
+en => count[24].ENA
+en => count[23].ENA
+en => count[22].ENA
+en => count[21].ENA
+en => count[20].ENA
+en => count[19].ENA
+en => count[18].ENA
+en => count[17].ENA
+en => count[16].ENA
+en => count[15].ENA
+en => count[14].ENA
+en => count[13].ENA
+en => count[12].ENA
+en => count[11].ENA
+en => count[10].ENA
+en => count[9].ENA
+en => count[8].ENA
+en => count[7].ENA
+en => count[6].ENA
+en => count[5].ENA
+en => count[4].ENA
+en => count[3].ENA
+en => count[2].ENA
+en => count[1].ENA
+en => count[0].ENA
+clkOut <= clkOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clkOutDisp <= clkOutDisp~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clkOutDbc <= clkOutDbc~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Clock|debouncer:enBtn_Dbc
+in => out~reg0.DATAIN
+clk => out~reg0.CLK
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Clock|debouncer:secBtn_Dbc
+in => out~reg0.DATAIN
+clk => out~reg0.CLK
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Clock|debouncer:minBtn_Dbc
+in => out~reg0.DATAIN
+clk => out~reg0.CLK
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Clock|debouncer:hourBtn_Dbc
+in => out~reg0.DATAIN
+clk => out~reg0.CLK
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Clock|counter_4_3_Bits:sec_counter
+clk => auxClk~reg0.CLK
+clk => counter_digit2[0]~reg0.CLK
+clk => counter_digit2[1]~reg0.CLK
+clk => counter_digit2[2]~reg0.CLK
+clk => counter_digit1[0]~reg0.CLK
+clk => counter_digit1[1]~reg0.CLK
+clk => counter_digit1[2]~reg0.CLK
+clk => counter_digit1[3]~reg0.CLK
+reset => counter_digit2[0]~reg0.ACLR
+reset => counter_digit2[1]~reg0.ACLR
+reset => counter_digit2[2]~reg0.ACLR
+reset => counter_digit1[0]~reg0.ACLR
+reset => counter_digit1[1]~reg0.ACLR
+reset => counter_digit1[2]~reg0.ACLR
+reset => counter_digit1[3]~reg0.ACLR
+reset => auxClk~reg0.ENA
+counter_digit1[0] <= counter_digit1[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter_digit1[1] <= counter_digit1[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter_digit1[2] <= counter_digit1[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter_digit1[3] <= counter_digit1[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter_digit2[0] <= counter_digit2[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter_digit2[1] <= counter_digit2[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter_digit2[2] <= counter_digit2[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+auxClk <= auxClk~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Clock|counter_4_3_Bits:min_counter
+clk => auxClk~reg0.CLK
+clk => counter_digit2[0]~reg0.CLK
+clk => counter_digit2[1]~reg0.CLK
+clk => counter_digit2[2]~reg0.CLK
+clk => counter_digit1[0]~reg0.CLK
+clk => counter_digit1[1]~reg0.CLK
+clk => counter_digit1[2]~reg0.CLK
+clk => counter_digit1[3]~reg0.CLK
+reset => counter_digit2[0]~reg0.ACLR
+reset => counter_digit2[1]~reg0.ACLR
+reset => counter_digit2[2]~reg0.ACLR
+reset => counter_digit1[0]~reg0.ACLR
+reset => counter_digit1[1]~reg0.ACLR
+reset => counter_digit1[2]~reg0.ACLR
+reset => counter_digit1[3]~reg0.ACLR
+reset => auxClk~reg0.ENA
+counter_digit1[0] <= counter_digit1[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter_digit1[1] <= counter_digit1[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter_digit1[2] <= counter_digit1[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter_digit1[3] <= counter_digit1[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter_digit2[0] <= counter_digit2[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter_digit2[1] <= counter_digit2[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter_digit2[2] <= counter_digit2[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+auxClk <= auxClk~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Clock|counter_4_2_Bits:hour_counter
+clk => counter_digit2[0]~reg0.CLK
+clk => counter_digit2[1]~reg0.CLK
+clk => counter_digit1[0]~reg0.CLK
+clk => counter_digit1[1]~reg0.CLK
+clk => counter_digit1[2]~reg0.CLK
+clk => counter_digit1[3]~reg0.CLK
+reset => counter_digit2[0]~reg0.ACLR
+reset => counter_digit2[1]~reg0.ACLR
+reset => counter_digit1[0]~reg0.ACLR
+reset => counter_digit1[1]~reg0.ACLR
+reset => counter_digit1[2]~reg0.ACLR
+reset => counter_digit1[3]~reg0.ACLR
+counter_digit1[0] <= counter_digit1[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter_digit1[1] <= counter_digit1[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter_digit1[2] <= counter_digit1[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter_digit1[3] <= counter_digit1[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter_digit2[0] <= counter_digit2[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter_digit2[1] <= counter_digit2[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Clock|decoder:clock_dec
+clk => digits[0].CLK
+clk => digits[1].CLK
+clk => digits[2].CLK
+dataInSec1[3] => Decoder0.IN3
+dataInSec1[2] => Decoder0.IN2
+dataInSec1[1] => Decoder0.IN1
+dataInSec1[0] => Decoder0.IN0
+dataInSec2[3] => Decoder1.IN3
+dataInSec2[2] => Decoder1.IN2
+dataInSec2[1] => Decoder1.IN1
+dataInSec2[0] => Decoder1.IN0
+dataInMin1[3] => Decoder2.IN3
+dataInMin1[2] => Decoder2.IN2
+dataInMin1[1] => Decoder2.IN1
+dataInMin1[0] => Decoder2.IN0
+dataInMin2[2] => Decoder3.IN2
+dataInMin2[1] => Decoder3.IN1
+dataInMin2[0] => Decoder3.IN0
+dataInHour1[3] => Decoder4.IN3
+dataInHour1[2] => Decoder4.IN2
+dataInHour1[1] => Decoder4.IN1
+dataInHour1[0] => Decoder4.IN0
+dataInHour2[1] => Decoder5.IN1
+dataInHour2[0] => Decoder5.IN0
+dataOut[7] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+dataOut[6] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+dataOut[5] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+dataOut[4] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+dataOut[3] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+dataOut[2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+dataOut[1] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+dataOut[0] <= dataOut.DB_MAX_OUTPUT_PORT_TYPE
+bits[0] <= Decoder6.DB_MAX_OUTPUT_PORT_TYPE
+bits[1] <= Decoder6.DB_MAX_OUTPUT_PORT_TYPE
+bits[2] <= Decoder6.DB_MAX_OUTPUT_PORT_TYPE
+bits[3] <= Decoder6.DB_MAX_OUTPUT_PORT_TYPE
+bits[4] <= Decoder6.DB_MAX_OUTPUT_PORT_TYPE
+bits[5] <= Decoder6.DB_MAX_OUTPUT_PORT_TYPE
+bits[6] <= <VCC>
+bits[7] <= <VCC>
+
+

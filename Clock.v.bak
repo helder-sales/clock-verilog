@@ -1,0 +1,239 @@
+module teste(input clk, reset, output [0:6]sec1, output [0:6]sec2, output [0:6]min1, output [0:6]min2, output [0:6]hour1, output [0:6]hour2);
+
+//Para interligar os clocks
+wire connection1, connection2, oClk;
+
+//Divide a frequência de modo a obter 1Hz a partir de 50MHz
+freqDiv(
+			.clk (clk),
+			.oClk (oClk)
+		 );
+
+//Contador para os segundos		 
+counterSecMin(
+					.clk (oClk),
+					.reset (reset),
+					.digit1 (sec1),
+					.digit2 (sec2),
+					.auxClk (connection1)
+				 );
+	
+//Contador para os minutos	
+counterSecMin(
+					.clk (connection1),
+					.reset (reset),
+					.digit1 (min1),
+					.digit2 (min2),
+					.auxClk (connection2)
+				 );
+	
+//Contador para as horas	
+counterHour(
+					.clk (connection2),
+					.reset (reset),
+					.digit1 (hour1),
+					.digit2 (hour2)
+			  );		
+
+endmodule 
+
+//Contador de horas no formato 24 horas
+module counterSecMin(input clk, reset, output reg [0:6]digit1, output reg [0:6]digit2, output reg auxClk);
+
+reg [3:0]counter_digit1;
+reg [3:0]counter_digit2;
+
+always @(posedge clk or posedge reset)
+	begin
+	
+		//Reseta todo o contador
+		if(reset)		
+			begin
+			
+				counter_digit1 <= 4'b0;
+				counter_digit2 <= 4'b0;
+				
+			end
+			
+		//Quando o primeiro dígito for 9
+		else if(counter_digit1 == 4'd9)		
+			begin
+			
+				//Se o segundo dígito for 5, resetar ambos dígitos e dar um pulso no clock auxiliar
+				if(counter_digit2 == 4'd5)				
+					begin
+					
+						counter_digit1 <= 4'b0;
+						counter_digit2 <= 4'b0;
+						auxClk <= 1'b1;
+						
+					end
+					
+				//Zerar o primeiro dígito e incrementar o segundo
+				else				
+					begin
+					
+						counter_digit1 <= 4'b0;
+						counter_digit2 <= counter_digit2 + 4'b1;
+						
+					end
+					
+			end
+		
+		//Incrementar o primeiro dígito
+		else
+			begin
+				counter_digit1 <= counter_digit1 + 4'b1;
+				
+				//Se o clock auxiliar estiver em estado alto, resetar
+				if(auxClk == 1'b1)
+					auxClk <= 1'b0;
+			end
+	
+	end
+	
+always @(*)
+	begin
+	
+		//Decodificador para diplay de 7 segmentos
+		case(counter_digit1)
+		
+			4'b0000: digit1 <= 7'b0111111;	//0
+			4'b0001: digit1 <= 7'b0000110;	//1
+			4'b0010: digit1 <= 7'b1011011;	//2
+			4'b0011: digit1 <= 7'b1001111;	//3
+			4'b0100: digit1 <= 7'b1100110;	//4
+			4'b0101: digit1 <= 7'b1101101;	//5
+			4'b0110: digit1 <= 7'b1111101;	//6
+			4'b0111: digit1 <= 7'b0000111;	//7
+			4'b1000: digit1 <= 7'b1111111;	//8
+			4'b1001: digit1 <= 7'b1100111;	//9
+			default:	digit1 <= 7'b0111111;	//0	
+			
+		endcase
+		
+		case(counter_digit2)
+		
+			4'b0000: digit2 <= 7'b0111111;	//0
+			4'b0001: digit2 <= 7'b0000110;	//1
+			4'b0010: digit2 <= 7'b1011011;	//2
+			4'b0011: digit2 <= 7'b1001111;	//3
+			4'b0100: digit2 <= 7'b1100110;	//4
+			4'b0101: digit2 <= 7'b1101101;	//5
+			4'b0110: digit2 <= 7'b1111101;	//6
+			4'b0111: digit2 <= 7'b0000111;	//7
+			4'b1000: digit2 <= 7'b1111111;	//8
+			4'b1001: digit2 <= 7'b1100111;	//9
+			default:	digit2 <= 7'b0111111;	//0	
+			
+		endcase
+		
+	end
+
+endmodule 
+
+//Contador de horas no formato 24 horas
+module counterHour(input clk, reset, output reg [0:6]digit1, output reg [0:6]digit2);
+
+reg [3:0]counter_digit1;
+reg [1:0]counter_digit2;
+
+always @(posedge clk or posedge reset)
+	begin
+	
+		//Reseta todo o contador
+		if(reset)		
+			begin
+			
+				counter_digit1 <= 4'b0;
+				counter_digit2 <= 2'b0;
+				
+			end
+		
+		//Se o segundo dígito for 2, incrementar o primeiro só até 4
+		else if(counter_digit2 == 2'd2)		
+			begin
+		
+				if(counter_digit1 == 4'd3)				
+					begin
+					
+						counter_digit1 <= 4'b0;
+						counter_digit2 <= 2'b0;
+						
+					end
+					
+				else				
+					counter_digit1 <= counter_digit1 + 4'b1;
+				
+			end
+		
+		//Incrementar o segundo dígito e zerar o primeiro
+		else if(counter_digit1 == 4'd9)		
+			begin
+							
+						counter_digit1 <= 4'b0;
+						counter_digit2 <= counter_digit2 + 2'b1;
+									
+			end
+		
+		//Incrementar o primeiro dígito
+		else
+			counter_digit1 <= counter_digit1 + 4'b1;
+		
+	end		
+	
+always @(*)
+	begin
+	
+		//Decodificador para diplay de 7 segmentos
+		case(counter_digit1)
+		
+			4'b0000: digit1 <= 7'b0111111;	//0
+			4'b0001: digit1 <= 7'b0000110;	//1
+			4'b0010: digit1 <= 7'b1011011;	//2
+			4'b0011: digit1 <= 7'b1001111;	//3
+			4'b0100: digit1 <= 7'b1100110;	//4
+			4'b0101: digit1 <= 7'b1101101;	//5
+			4'b0110: digit1 <= 7'b1111101;	//6
+			4'b0111: digit1 <= 7'b0000111;	//7
+			4'b1000: digit1 <= 7'b1111111;	//8
+			4'b1001: digit1 <= 7'b1100111;	//9
+			default:	digit1 <= 7'b0111111;	//0	
+			
+		endcase
+		
+		case(counter_digit2)
+		
+			4'b0000: digit2 <= 7'b0111111;	//0
+			4'b0001: digit2 <= 7'b0000110;	//1
+			4'b0010: digit2 <= 7'b1011011;	//2
+			default:	digit2 <= 7'b0111111;	//0	
+			
+		endcase
+		
+	end
+
+endmodule 
+
+module freqDiv(input clk, output reg oClk);
+
+//Registrador para guardar a contagem dos pulsos de clock
+reg [25:0]count;
+
+always @(posedge clk)
+	begin
+		
+		count <= count + 1'b1;
+		
+		//Se a contagem for metade de 50M, inverte a saída do clock auxiliar
+		if(count == 25'd24999999)
+			begin
+			
+				oClk = !oClk;
+				count <= 1'b0;
+				
+			end
+	
+	end
+	
+endmodule 
